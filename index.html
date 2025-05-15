@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./src/assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="menu">
+            <a href="#" class="logo">
+                <img src="./src/assets/images/logo.svg" alt="logo">
+            </a>
+
+            <input type="checkbox" name="menu-mobile" id="menu-mobile">
+            <label for="menu-mobile">
+                <img class="icon-menu" id="icon-menu" src="./src/assets/images/icon-menu.svg" alt="icone menu">
+            </label>
+
+            <nav>
+                <ul class="navegacao">
+                    <li>
+                        <a href="#">Collections</a>
+                    </li>
+                    <li>
+                        <a href="#">Men</a>
+                    </li>
+                    <li>
+                        <a href="#">Women</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="carrinho">
+            <span class="quantidade hide" id="text-quantity">0</span>
+            <div class="container">
+                <img class="icon-cart" src="./src/assets/images/icon-cart.svg" alt="icone carrinho de compras">
+                <div class="cart">
+                    <h5>Cart</h5>
+                    <div class="container-cart"></div>
+                </div>
+            </div>
+            <img class="avatar" src="./src/assets/images/image-avatar.png" alt="avatar">
+        </div>
+    </header>
+    <main class="principal" data-aos="fade-up"
+    data-aos-duration="3000">
+        <section class="slider">
+            <ul class="imagens">
+                <button class="btn-preview btn-previous">
+                    <img src="./src/assets/images/icon-previous.svg" alt="icone voltar">
+                </button>
+                <li>
+                    <img src="./src/assets/images/image-product-1.jpg" class="img-preview atived rotacionar" alt="img">
+                </li>
+                <li>
+                    <img src="./src/assets/images/image-product-2.jpg" class="img-preview" alt="img">
+                </li>
+                <li>
+                    <img src="./src/assets/images/image-product-3.jpg" class="img-preview" alt="img">
+                </li>
+                <li>
+                    <img src="./src/assets/images/image-product-4.jpg" class="img-preview" alt="img">
+                </li>
+                <button class="btn-preview btn-next">
+                    <img src="./src/assets/images/icon-next.svg" alt="icone avançar">
+                </button>
+            </ul>
+            <ul class="preview-imagens">
+                <li>
+                    <button class="btn transform">
+                        <img src="./src/assets/images/image-product-1-thumbnail.jpg" alt="img">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn">
+                        <img src="./src/assets/images/image-product-2-thumbnail.jpg" alt="img">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn">
+                        <img src="./src/assets/images/image-product-3-thumbnail.jpg" alt="img">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn">
+                        <img src="./src/assets/images/image-product-4-thumbnail.jpg" alt="img">
+                    </button>
+                </li>
+            </ul>
+        </section>
+        <section class="conteudo">
+            <p class="compania">Sneaker Company</p>
+            <h1 class="titulo-principal">Fall Limited Edition <br> Sneakers</h1>
+            <p class="descricao">These low-profile sneakers are your perfect casual wear companion. Featuring a
+                durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <div class="container-price">
+                <div>
+                    <span class="price">$125.00</span>
+                    <p class="porcentagem">50%</p>
+                </div>
+                <span class="dolar">$250.00</span>
+            </div>
+            <div class="container-add">
+                <div class="controls">
+                    <button class="btn-quantidade">
+                        <img src="./src/assets/images/icon-minus.svg" alt="icone mais">
+                    </button>
+                    <span class="value" id="value">0</span>
+                    <button class="btn-quantidade">
+                        <img src="./src/assets/images/icon-plus.svg" alt="icone menos">
+                    </button>
+                </div>
+                <button class="btn-add">
+                    <i class="fa-solid fa-cart-shopping btn-icon-cart"></i>
+                    Add to cart
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div class="fade hide"></div>
+
+    <div class="modal hide">
+        <button id="btn-close" class="btn-close hide">
+            <img src="./src/assets/images/icon-close.svg" alt="botão de fechar">
+        </button>
+        <div class="slider">
+            <button class="btn-modal btn-voltar">
+                <img src="./src/assets/images/icon-previous.svg" alt="icone voltar">
+            </button>
+            <ul class="imagens">
+                <li>
+                    <img src="./src/assets/images/image-product-1.jpg" class="img ativo" alt="img">
+                </li>
+                <li>
+                    <img src="./src/assets/images/image-product-2.jpg" class="img" alt="img">
+                </li>
+                <li>
+                    <img src="./src/assets/images/image-product-3.jpg" class="img" alt="img">
+                </li>
+                <li>
+                    <img src="./src/assets/images/image-product-4.jpg" class="img" alt="img">
+                </li>
+            </ul>
+            <button class="btn-modal btn-avancar">
+                <img src="./src/assets/images/icon-next.svg" alt="icone avancar">
+            </button>
+        </div>
+        <ul class="preview-imagens">
+            <li>
+                <button class="thumb active">
+                    <img src="./src/assets/images/image-product-1-thumbnail.jpg" alt="img">
+                </button>
+            </li>
+            <li>
+                <button class="thumb">
+                    <img src="./src/assets/images/image-product-2-thumbnail.jpg" alt="img">
+                </button>
+            </li>
+            <li>
+                <button class="thumb">
+                    <img src="./src/assets/images/image-product-3-thumbnail.jpg" alt="img">
+                </button>
+            </li>
+            <li>
+                <button class="thumb">
+                    <img src="./src/assets/images/image-product-4-thumbnail.jpg" alt="img">
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="./dist/index.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+        integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

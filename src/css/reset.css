@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Kumbh Sans", Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -1,0 +1,225 @@
+@import "./modal.css";
+@import "././cabecalho.css";
+@import "./slider.css";
+@import "./reset.css";
+
+@keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+.rotate {
+    animation: rotate-center 0.6s ease-in-out both;
+}
+
+.principal {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 80vh;
+}
+
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.conteudo .compania {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.conteudo .titulo-principal {
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+    max-width: 400px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.5;
+}
+
+.container-price {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.container-price div {
+    display: flex;
+    gap: 20px;
+}
+
+div .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: hsl(220, 13%, 13%);
+}
+
+div .porcentagem {
+    text-align: center;
+    font-size: 14px;
+    width: 50px;
+    background-color: hsl(220, 13%, 13%);
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.container-price .dolar {
+    text-decoration: line-through;
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+.container-add {
+    display: flex;
+    align-items: center;
+    width: 340px;
+    justify-content: center;
+    gap: 30px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.controls .btn-quantidade {
+    background: none;
+    width: 40px;
+    height: 40px;
+    color: hsl(26, 100%, 55%);
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls button:hover {
+    opacity: 0.6;
+}
+
+.container-add .btn-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background-color: hsl(26, 100%, 55%);
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.container-add .btn-add:hover {
+    opacity: 0.6;
+}
+
+.container-add .btn-add .btn-icon-cart {
+    width: 15px;
+}
+
+@media all and (width < 978px) {
+
+    html,
+    body {
+        overflow: visible;
+        overflow-x: hidden;
+    }
+
+    .principal {
+        flex-direction: column;
+        min-height: 100vh;
+        gap: 0px;
+    }
+
+    .principal .conteudo {
+        padding: 30px;
+    }
+
+    .principal .slider {
+        width: 100%;
+    }
+
+    .principal .imagens {
+        width: 100%;
+        height: 300px;
+        margin: 0;
+        border-radius: 0px;
+    }
+
+    .imagens .btn-preview {
+        display: block;
+        padding: none;
+        width: 50px;
+        height: 50px;
+    }
+
+    .imagens .btn-previous {
+        left: 0px;
+        z-index: 5;
+    }
+
+    .imagens .btn-next {
+        right: 0px;
+        z-index: 5;
+    }
+
+    .imagens .img-preview {
+        border-radius: 0px;
+    }
+
+    .principal .preview-imagens {
+        display: none;
+    }
+
+    .container-price {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (width < 440px) {
+    .cabecalho {
+        padding: 0px;
+    }
+
+    .carrinho {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .carrinho .container {
+        width: 0px;
+    }
+
+    .conteudo .container-add {
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+    }
+}

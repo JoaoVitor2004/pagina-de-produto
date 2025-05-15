@@ -1,0 +1,220 @@
+.cabecalho {
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    border-bottom: 1px solid #0000002e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho .menu {
+    display: flex;
+    gap: 50px;
+}
+
+.menu input[type="checkbox"] {
+    display: none;
+}
+
+.menu .icon-menu {
+    display: none;
+}
+
+.navegacao {
+    display: flex;
+    gap: 30px;
+}
+
+.navegacao li a {
+    font-weight: normal;
+    font-size: 13px;
+    color: #000;
+    transition: 0.2s ease-in-out;
+    padding-bottom: 20px;
+}
+
+.navegacao li a:hover {
+    border-bottom: 4px solid hsl(26, 100%, 55%);
+}
+
+.carrinho {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.carrinho .container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 100px;
+}
+
+.carrinho .quantidade {
+    position: absolute;
+    top: 0;
+    right: 70px;
+    padding: 30px;
+    transition: 0.2s ease-in-out;
+    visibility: visible;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 10px;
+    background-color: hsl(26, 100%, 55%);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.carrinho .quantidade.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .cart {
+    position: absolute;
+    top: 30px;
+    right: -40px;
+    width: 300px;
+    height: 400px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: hsl(223, 64%, 98%);
+    z-index: 999;
+    padding: 30px;
+    cursor: default;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+.container:hover .cart {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart h5 {
+    width: 100%;
+    border-bottom: 1px solid #00000044;
+    padding-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cart .container-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-cart .conteudo-cart {
+    display: flex;
+    gap: 20px;
+}
+
+.conteudo-cart .thumb {
+    width: 50px;
+    height: 50px;
+}
+
+.container-cart .descricao {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-cart .btn-cart {
+    width: 200px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid hsl(220, 13%, 13%);
+    text-align: center;
+    max-width: 90%;
+    background: none;
+    margin-bottom: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.container-cart .btn-cart:hover {
+    background-color: hsl(26, 100%, 55%);
+    color: #fff;
+    border: 1px solid hsl(26, 100%, 55%);
+}
+
+.descricao .title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.descricao .container-price {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.carrinho img.avatar {
+    width: 50px;
+    transition: 0.2s ease-in-out;
+    border-radius: 50%;
+    border: 2px solid none;
+}
+
+.carrinho img.avatar:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+}
+
+@media (width < 768px) {
+    .cabecalho {
+        padding: 0 50px 0 50px;
+        width: 100%;
+    }
+
+    .cabecalho .menu {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .menu .icon-menu {
+        display: block;
+        position: relative;
+        z-index: 9;
+        width: 20px;
+        height: 20px;
+        background: none;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    .navegacao {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ nav .navegacao {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        width: 200px;
+        max-width: 90%;
+        padding: 100px 20px 20px 20px;
+        height: 100vh;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .navegacao li a {
+        padding-bottom: 10px;
+    }
+}
